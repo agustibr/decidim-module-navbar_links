@@ -10,7 +10,7 @@ module Decidim
       isolate_namespace Decidim::NavbarLinks
 
       initializer "decidim.menu" do
-        Decidim.menu :menu do |menu|
+        Decidim.menu :menu_overwrite do |menu|
           NavbarLink.organization(current_organization).each do |navbar_link|
             menu.item translated_attribute(navbar_link.title),
                       navbar_link.link,
